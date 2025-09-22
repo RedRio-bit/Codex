@@ -1,0 +1,50 @@
+{
+  "id": "image_asset",
+  "label": "Image asset",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Slug",
+          "placeholder": "immagine-significativa"
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Immagine",
+          "constraint": {
+            "width": 0,
+            "height": 0
+          },
+          "thumbnails": []
+        }
+      },
+      "caption": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Didascalia",
+          "multi": "paragraph,em,strong,hyperlink"
+        }
+      },
+      "credits": {
+        "type": "Text",
+        "config": {
+          "label": "Crediti",
+          "placeholder": "Foto di ..."
+        }
+      },
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "Ordine",
+          "placeholder": "1"
+        }
+      }
+    }
+  },
+  "format": "custom"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "codex",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build-images": "tsx scripts/generate-images.ts",
+    "prebuild": "npm run build-images",
+    "build": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prismicio/client": "^7.4.1",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.4"
+  }
+}
