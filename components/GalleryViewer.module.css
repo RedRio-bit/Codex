@@ -1,0 +1,134 @@
+.viewer {
+  padding: 1rem 6vw 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  min-height: min(70vh, 70vw);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.85));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  isolation: isolate;
+}
+
+.canvas img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: lighten;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.interactionLayer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+}
+
+.navigationZone {
+  flex: 1;
+  pointer-events: auto;
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+}
+
+.navigationZoneLeft {
+  cursor: w-resize;
+}
+
+.navigationZoneRight {
+  cursor: e-resize;
+}
+
+.navigationZone:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: -6px;
+}
+
+.pointerHint {
+  position: absolute;
+  bottom: 1.5rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(16, 16, 16, 0.65);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.pointerHintLeft {
+  left: 1.5rem;
+}
+
+.pointerHintRight {
+  right: 1.5rem;
+}
+
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2.5rem;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.captionTitle {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.captionDetails {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0.7;
+}
+
+.captionDetails span::before {
+  content: '•';
+  margin-right: 0.4rem;
+  opacity: 0.4;
+}
+
+.screensaverBadge {
+  align-self: flex-end;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .viewer {
+    padding: 1rem 1.5rem 2.5rem;
+  }
+
+  .canvas {
+    border-radius: 1rem;
+    min-height: 60vh;
+  }
+
+  .pointerHint {
+    display: none;
+  }
+}

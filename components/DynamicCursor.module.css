@@ -1,0 +1,42 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  will-change: transform, opacity;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transform: translate(-50%, -50%);
+}
+
+.dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+.label {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(12, 12, 12, 0.75);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}
